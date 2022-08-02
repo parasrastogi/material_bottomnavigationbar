@@ -32,7 +32,11 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
-
+  Map<int, GlobalKey<NavigatorState>> navigatorKeys = {
+     0: GlobalKey<NavigatorState>(),
+     1: GlobalKey<NavigatorState>(),
+     2: GlobalKey<NavigatorState>(),
+  };
     final List<Widget> _widgetOptions = <Widget>[
     const page1(),
     const page2(),
@@ -70,11 +74,16 @@ class _MyHomePageState extends State<MyHomePage> {
          selectedItemColor: Colors.amber[800],
          onTap: _onItemTapped,
        ),
-      body:  Navigator(
-        onGenerateRoute: (RouteSettings settings){
-           return MaterialPageRoute(builder: (_) => _widgetOptions.elementAt(_selectedIndex));
-        },
-      ),
+      body:  buildNavigator(),
     );
+  }
+
+   buildNavigator() {
+     return Navigator(
+       key: navigatorKeys[_selectedIndex],
+       onGenerateRoute: (RouteSettings settings){
+         return MaterialPageRoute(builder: (_) => _widgetOptions.elementAt(_selectedIndex));
+       },
+     );
   }
 }
