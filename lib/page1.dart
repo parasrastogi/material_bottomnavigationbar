@@ -8,7 +8,7 @@ class page1 extends StatelessWidget{
   Widget build(BuildContext context) {
     return Container(
 
-      color: Colors.grey,
+      color: Colors.red,
       child:
       Column(
         children: [
