@@ -17,7 +17,7 @@ class page1 extends StatelessWidget{
           ),
           TextButton(onPressed: (){
             Navigator.of(context).push( MaterialPageRoute(builder: (context) => const page1_inner()));
-          }, child: Text('GO Forward press it.....1111'))
+          }, child: Text('GO Forward press it.....1111 2222'))
         ],
       ),
     );
