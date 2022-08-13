@@ -13,7 +13,7 @@ class page1 extends StatelessWidget{
       Column(
         children: [
           const Center(
-              child :  Text(' page 1 demo')
+              child :  Text(' page 1 demo new')
           ),
           TextButton(onPressed: (){
             Navigator.of(context).push( MaterialPageRoute(builder: (context) => const page1_inner()));
